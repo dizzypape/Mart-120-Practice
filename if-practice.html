@@ -1,0 +1,58 @@
+<html>
+    <title>if practice</title>
+    <head>
+        <script>
+            var fullForm
+            function getInfo()
+            {
+                var firstName = document.getElementById("fName").value;
+                var lastName = document.getElementById("lName").value;
+                var Email = document.getElementById("email").value;
+                
+                //window.alert(firstName + " " + lastName);
+                if(Email == "")
+                {
+                    document.getElementById("email").style.backgroundColor = "red";
+                    document.getElementById("email").focus();
+                }
+                if(lastName == "")
+                {
+                    document.getElementById("lName").style.backgroundColor = "red";
+                    document.getElementById("lName").focus();
+                }
+                if(firstName == "")
+                {
+                    document.getElementById("fName").style.backgroundColor = "red";
+                    document.getElementById("fName").focus();
+                }
+            }
+            function checkBox()
+            {
+            var yesCheckbox = document.getElementById("yes").checked;
+            var maybeCheckbox = document.getElementById("maybe").checked;
+            var noCheckbox = document.getElementById("no").checked;
+            
+            if(yesCheckbox == false)
+            {
+                window.alert("Missing the checkmark for 'yes'.");
+            }
+        }
+        </script>
+    
+    
+    
+    
+    
+    
+    </head>
+        <body>
+            First name: <input id="fName" type="text"><br>
+            Last name: <input id="lName" type="text"><br>
+            <input type="checkbox" name="yes" id="yes" onclick = "checkBox();" style="color:red;">Yes<br>
+            <input type="checkbox" name="no" id="no" onclick = "checkBox();">No<br>
+            <input type="checkbox" name="maybe?" id="maybe" onClick = "checkBox();">I think I accept, but I'm not actually sure because I cannot promise that I will attempt to contact you, but the thought of contacting you will be there... so, maybe? I think I understand them.<br>
+            <button id="mySubmit" type="button" onClick = "getInfo(); + checkBox();">Submit</button>
+
+        <div id="message" style="color:red;"></div>
+        </body>
+</html>
