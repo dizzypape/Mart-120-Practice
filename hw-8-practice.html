@@ -1,0 +1,66 @@
+<html>
+    <title>HW 8 Practice</title>
+    <style>
+        h1 {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size:48px;
+            color:cornflowerblue
+        }
+        span {
+            font-family:'Times New Roman', Times, serif;
+            font-size:14px;
+            color:darkgreen;
+        }
+    </style>
+
+ <script>
+    var favoriteNumber = 4;
+    var myName; // global variable myName -- seen everywhere
+    myName = "Josie";
+    var purple, yellow, green;
+    purple = "#0000FF";
+
+    function changeName(name, number) {
+        myName = name;
+        favoriteNumber = number;
+        document.getElementById("myID").innerHTML = "Hello, my name is " + myName + " and my favorite number is " + favoriteNumber + ".";
+    }
+</script>
+<script>
+    function displayFavoriteColor(color) 
+    {
+        var favoriteColor = color;
+        document.getElementById("myTag").innerHTML = "My favorite color is " + favoriteColor;
+    }
+</script>
+
+    <head>
+        <h1>Week 8 Practice Site</h1>
+
+        <script>
+            window.alert("Excuse me...");
+        </script>
+
+        <script>
+            document.write("What are you doing?");
+        </script>
+
+        <script>
+            document.getElementById("myTag").innerHTML="New Text?";
+        </script>
+    </head>
+
+        <body onload="changeName('Tiffany', 4);">
+            <span id="myTag">this is the REAL text. *wink* *wink*</span>
+            <div id="myID">Non-styled text</div>
+        </body>
+
+        <body onload="displayFavoriteColor('purple');">
+            <span id="myTag">This is my favorite text.</span>
+        </body>
+        
+        <script>
+            document.getElementById("myID").innerHTML = "Hello, my name is " + myName;
+        </script>
+
+</html>
