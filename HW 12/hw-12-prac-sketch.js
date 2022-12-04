@@ -15,14 +15,26 @@ var s = 83;
 var a = 65;
 var d = 68;
 
+var myXs = [];
+var myYs = [];
+var myDiameters = [];
+
+
 function setup()
 {
-    createCanvas(500,300);
+    createCanvas(800,600);
+
+    for(var i = 0; i < 4; i++)
+    {
+        myXs[i] = getRandomNumber(800);
+        myYs[i] = getRandomNumber(600);
+        myDiameters[i] = getRandomNumber(100);
+    }
 }
 
 function draw()
 {
-    background(139,0,139)
+    background(0);
 
     CircleSquare();
 
@@ -44,8 +56,22 @@ function draw()
 
     ellipse(mousex, mousey, 15, 50);
 
-    ConcentricCircle(150, 125, 80, 55, 0, 139, 139, 120, 237, 149);
-    ConcentricCircle(275, 200, 80, 55, 0, 139, 139, 120, 237, 149);
+    for(var i = 0; i < myXs.length; i++)
+    {
+        ConcentricCircle
+        (
+            myXs[i],
+            myYs[i],
+            myDiameters[i],
+            myDiameters[i] / 2,
+            50,
+            120,
+            120,
+            120,
+            50,
+            120
+        )
+    }
 }
 
 function controlCircle ()
@@ -116,7 +142,24 @@ function CircleSquareP(circleX, circleY, diameter, squareX, squareY, sideLength)
     square(squareX, squareY, sideLength);
 }
 
-function ConcentricCircle(x, y, outer_diameter, inner_diameter, outer_red, outer_green, outer_blue, inner_red, inner_green, inner_blue)
+function getRandomNumber(number)
+{
+    return Math.floor(Math.random() * number) + 10;
+}
+
+function ConcentricCircle
+    (
+    x, 
+    y, 
+    outer_diameter, 
+    inner_diameter, 
+    outer_red, 
+    outer_green, 
+    outer_blue, 
+    inner_red, 
+    inner_green, 
+    inner_blue
+    )
 {
     fill(outer_red, outer_green, outer_blue);
     circle(x, y, outer_diameter);
